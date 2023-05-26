@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ResUserDto {
 	
-	private int _id;
+	private String _id;
 	private String fname;
 	private String lname;
 	private LocalDate dob;

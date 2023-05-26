@@ -1,6 +1,7 @@
 package com.car.rental.service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ import com.car.rental.entity.Driver;
 import com.car.rental.entity.DriverHotel;
 import com.car.rental.entity.TicketDetails;
 import com.car.rental.entity.User;
+import com.car.rental.helper.RandomIdGenerator;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -61,30 +63,22 @@ public class TicketServiceImpl implements TicketService {
 	
 	@Override
 	public ResBookNowDto addBookingDetails(ReqBookNowDto bookNowDto) {
-		//Find car by Id
-		System.out.println(bookNowDto);
-		System.out.println(bookNowDto.getCarId());
 		
-		
+        //Find car by Id
 		Optional<Car> optionalCar = carRepository.findById(bookNowDto.getCarId());
 		Car car = optionalCar.get();
-		
-		System.out.println(optionalCar);
-		System.out.println(car);
 		
 		float totalPrice = car.getCharge() * bookNowDto.getDays();
 
 		BookNow bookNow = this.modelMapper.map(bookNowDto, BookNow.class);
+		bookNow.set_id(RandomIdGenerator.generateRandomId());
 		bookNow.setTotalPrice(totalPrice);
 		bookNow.setCar(car);
 		
-		bookNowRepository.save(bookNow);
+//		bookNowRepository.save(bookNow);
 
-		System.out.println(ticket);
-		
+		ticket.set_id(RandomIdGenerator.generateRandomId());
 		ticket.setBookNow(bookNow);
-		
-		System.out.println(ticket);
 		
 		return bookNowConverter.entityToDto(bookNow);
 	}
@@ -94,11 +88,10 @@ public class TicketServiceImpl implements TicketService {
 	public ResDriverHotelDto addDriverHotel(ReqDriverHotelDto driverHotelDto) {
 		
 		DriverHotel driverHotel = this.modelMapper.map(driverHotelDto, DriverHotel.class);
+		driverHotel.set_id(RandomIdGenerator.generateRandomId());
 		
-		driverHotelRepository.save(driverHotel);
+//		driverHotelRepository.save(driverHotel);
 		ticket.setDriverHotel(driverHotel);
-		
-		System.out.println(ticket);
 		
 		return this.modelMapper.map(driverHotel, ResDriverHotelDto.class);
 	}
@@ -123,21 +116,19 @@ public class TicketServiceImpl implements TicketService {
 		//Find user by email
 		User user = userRepository.getUserByUserName(email);
 		
-		System.out.println(user);
 		Atm atm = new Atm();
+		atm.setId(RandomIdGenerator.generateRandomId());
 		atm.setCardNo(atmDto.getCardNo());
 		
-		System.out.println(atm);
-		atm = atmRepository.save(atm);
+//		atm = atmRepository.save(atm);
 		
 		ticket.setUser(user);
 		ticket.setAtm(atm);
 		ticket.setDriver(driver);
 		
 		ticket = ticketRepository.save(ticket);
-		System.out.println(ticket);
-		System.out.println("------------------------------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX------------------------------");
-		
+//		System.out.println(ticket);
+//		System.out.println("------------------------------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX------------------------------");
 		
 		ResAtmDto resAtmDto = atmConverter.entityToDto(ticket);
 		

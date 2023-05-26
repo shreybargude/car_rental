@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.car.rental.entity.TicketDetails;
 import com.car.rental.entity.User;
 
-public interface TicketRepository extends JpaRepository<TicketDetails, Integer> {
+public interface TicketRepository extends JpaRepository<TicketDetails, String> {
 
 	List<TicketDetails> findByUser(User user);
 }

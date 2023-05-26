@@ -12,8 +12,8 @@ import lombok.Data;
 @Table(name="driver_hotel")
 public class DriverHotel {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int _id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String _id;
 	private String hotel;
 	private String room;
 	private int stay;
