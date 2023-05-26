@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Atm {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int _id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String _id;
 	private String cardNo;
 
 	//	private Driver driver;
@@ -18,15 +18,15 @@ public class Atm {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Atm(int _id, String cardNo) {
+	public Atm(String _id, String cardNo) {
 		super();
 		this._id = _id;
 		this.cardNo = cardNo;
 	}
-	public int getId() {
+	public String getId() {
 		return _id;
 	}
-	public void setId(int _id) {
+	public void setId(String _id) {
 		this._id = _id;
 	}
 	public String getCardNo() {

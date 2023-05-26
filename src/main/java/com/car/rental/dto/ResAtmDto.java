@@ -34,5 +34,5 @@ public class ResAtmDto {
 	private int members;
 	private int days;
 	private String cardNo;
-	private int _id;
+	private String _id;
 }

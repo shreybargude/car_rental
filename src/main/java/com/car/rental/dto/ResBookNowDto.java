@@ -27,6 +27,6 @@ public class ResBookNowDto {
 	private int days;
 	private int numBags;
 	private float totalPrice;	
-	private int _id;
+	private String _id;
 	private int _v;
 }

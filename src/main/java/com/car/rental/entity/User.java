@@ -14,8 +14,8 @@ import jakarta.persistence.Table;
 public class User {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int _id;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String _id;
 	
 	@Column(name="fname")
 	private String fname;
@@ -33,7 +33,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int _id, String fname, String lname, LocalDate dob, String email, String password) {
+	public User(String _id, String fname, String lname, LocalDate dob, String email, String password) {
 		super();
 		this._id = _id;
 		this.fname = fname;
@@ -43,11 +43,11 @@ public class User {
 		this.password = password;
 	}
 
-	public int get_id() {
+	public String get_id() {
 		return _id;
 	}
 
-	public void set_id(int _id) {
+	public void set_id(String _id) {
 		this._id = _id;
 	}
 

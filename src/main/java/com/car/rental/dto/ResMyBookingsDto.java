@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class ResMyBookingsDto {
 
-	private int _id;
+	private String _id;
 	private String email;
 	private String fname;
 	private String lname;

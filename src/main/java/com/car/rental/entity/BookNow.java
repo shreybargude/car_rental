@@ -17,8 +17,8 @@ import lombok.Data;
 @Data
 public class BookNow {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int _id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String _id;
 	
 	private String pickUpLocation;
 	private String dropLocation;

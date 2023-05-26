@@ -55,9 +55,9 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<ResLoginDto> addLogin(@RequestBody ReqLoginDto loginDto, HttpSession session) {
+	public ResponseEntity<ResLoginDto> authenticateLogin(@RequestBody ReqLoginDto loginDto, HttpSession session) {
 		
-		ResLoginDto resLogin = userService.addLogin(loginDto);
+		ResLoginDto resLogin = userService.authenticateLogin(loginDto);
 		
 		if(resLogin!=null) {
 			session.setAttribute("email", loginDto.getEmail());

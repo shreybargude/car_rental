@@ -13,6 +13,6 @@ public interface UserService {
 
 	public List<ResUserDto> getUsers();
 
-	public ResLoginDto addLogin(ReqLoginDto loginDto);
+	public ResLoginDto authenticateLogin(ReqLoginDto loginDto);
 
 }

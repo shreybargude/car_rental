@@ -15,8 +15,8 @@ import lombok.Data;
 @Entity
 public class TicketDetails {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int _id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String _id;
 	
 	@ManyToOne
 	private User user;
