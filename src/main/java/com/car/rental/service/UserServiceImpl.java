@@ -19,6 +19,7 @@ import com.car.rental.dto.ReqUserDto;
 import com.car.rental.dto.ResLoginDto;
 import com.car.rental.dto.ResUserDto;
 import com.car.rental.entity.User;
+import com.car.rental.helper.RandomIdGenerator;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -42,6 +43,7 @@ public class UserServiceImpl implements UserService {
 //		logger.info("*********************************************************************************");
 		
 		User user = userConverter.dtoToEntity(userDto);
+		user.set_id(RandomIdGenerator.generateRandomId());
 		user = userRepository.save(user);
 		
 		return userConverter.entityToDto(user);
