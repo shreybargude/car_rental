@@ -2,7 +2,7 @@ package com.car.rental.service;
 
 import java.util.List;
 
-import com.car.rental.dto.ReqLoginDto;
+import com.car.rental.dto.AuthRequest;
 import com.car.rental.dto.ReqUserDto;
 import com.car.rental.dto.ResLoginDto;
 import com.car.rental.dto.ResUserDto;
@@ -13,6 +13,6 @@ public interface UserService {
 
 	public List<ResUserDto> getUsers();
 
-	public ResLoginDto authenticateLogin(ReqLoginDto loginDto);
+	public ResLoginDto authenticateAndGetToken(AuthRequest authRequest);
 
 }

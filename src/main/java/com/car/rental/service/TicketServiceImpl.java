@@ -1,7 +1,6 @@
 package com.car.rental.service;
 
 import java.util.Optional;
-import java.util.UUID;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,13 +48,13 @@ public class TicketServiceImpl implements TicketService {
 	
 	@Autowired private UserRepository userRepository;
 
-	@Autowired private BookNowRepository bookNowRepository;
+//	@Autowired private BookNowRepository bookNowRepository;
 	
 	@Autowired private DriverRepository driverRepository;
 	
-	@Autowired private DriverHotelRepository driverHotelRepository;
+//	@Autowired private DriverHotelRepository driverHotelRepository;
 
-	@Autowired private AtmRepository atmRepository;
+//	@Autowired private AtmRepository atmRepository;
 	
 	@Autowired private BookNowConverter bookNowConverter;
 	
