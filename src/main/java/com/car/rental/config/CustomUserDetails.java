@@ -22,7 +22,6 @@ public class CustomUserDetails implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
 		SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getFname());
-		System.out.println("CustomUserDetails"+List.of(simpleGrantedAuthority));
 		
 		return List.of(simpleGrantedAuthority);
 	}

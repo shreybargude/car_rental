@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.car.rental.dto.ReqCarDto;
 import com.car.rental.dto.ResCarDto;
+import com.car.rental.entity.Car;
 import com.car.rental.service.CarService;
 
 import jakarta.servlet.http.HttpSession;
@@ -26,6 +27,7 @@ public class CarController {
 	
 	@Autowired
 	private CarService carService;
+	
 	
 	@PostMapping("/cars")
 	public ResponseEntity<ResCarDto> addCar(@RequestBody ReqCarDto carDto){

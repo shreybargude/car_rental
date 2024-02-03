@@ -12,6 +12,7 @@ public class CarRentalApplication {
 		SpringApplication.run(CarRentalApplication.class, args);
 	}
 	
+	
 	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
